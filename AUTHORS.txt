@@ -1,0 +1,6 @@
+# This file lists all contributors to the repository. DO NOT EDIT
+
+Banele Mahlangu <banelemahlangu@gmail.com>
+Khaya Mokoena <khayamokoena82@gmail.com>
+
+#end
