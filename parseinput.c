@@ -38,5 +38,5 @@ char **parseInput(char *str)
 	}
 
 	args[i] = NULL;
-	return (ARGS);
+	return (args);
 }

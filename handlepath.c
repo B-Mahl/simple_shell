@@ -11,7 +11,7 @@ void handlePath(char **cmd)
 	const int size = 32;
 	int i = 0, j = 0;
 	char dir[] = "/usr/bin/";
-	char path[32] = (0);
+	char path[32] = {0};
 
 	while (dir[i])
 	{
