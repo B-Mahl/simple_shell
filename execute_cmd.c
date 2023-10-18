@@ -23,7 +23,7 @@ void executeCommand(char **args)
 			if (_strcmp(args[0], "env") == 0)
 				printEnv();
 			handlePath(args);
-			perror(args[0]);
+			perror("execve");
 			exit(EXIT_FAILURE);
 		}
 	} else
