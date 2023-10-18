@@ -11,8 +11,8 @@ void readInput(char **lineptr, size_t *n)
 
 	if (len == -1)
 	{
-		perror("getline");
-		exit(EXIT_FAILURE);
+		write(STDOUT_FILENO, "\n", 1);
+		exit(EXIT_SUCCESS);
 	}
 	if (len > 0 && (*lineptr)[len - 1] == '\n')
 		(*lineptr)[len - 1] = '\0';
