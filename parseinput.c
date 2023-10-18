@@ -8,7 +8,7 @@
 
 char **parseInput(char *str)
 {
-	int buffsize = 1020;
+	int buffsize = 64;
 	char **args = (char **)malloc(buffsize * sizeof(char *));
 	char *token = NULL;
 	int i = 0;
@@ -23,17 +23,20 @@ char **parseInput(char *str)
 
 	while (token)
 	{
-		if (token[0] == '#')
-			break;
-
 		args[i] = token;
 		token = strtok(NULL, " \n");
 		i++;
 
 		if (i >= buffsize)
 		{
-			perror("buffer overflow");
-			exit(EXIT_FAILURE);
+			buffsize *= 2;
+			args = (char **)realloc(args, buffsize * sizeof(char *));
+
+			if (args == NULL)
+			{
+				perror("buffer overflow");
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 
