@@ -17,7 +17,7 @@ void executeCommand(char **args)
 	if (newProcess == 0)
 	{
 		if (args[0] == NULL)
-			exit(EXIT_FAILURE);
+			exit(EXIT_SUCCESS);
 		if (execve(args[0], args, environ) == -1)
 		{
 			if (_strcmp(args[0], "env") == 0)
