@@ -27,5 +27,7 @@ void executeCommand(char **args)
 			exit(EXIT_FAILURE);
 		}
 	} else
+	{
 		wait(&status);
+	}
 }
