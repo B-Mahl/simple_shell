@@ -6,25 +6,10 @@
  */
 int main(void)
 {
-	char *line = NULL;
-	char **args = NULL;
-	size_t bufsiz = 0;
+	if (isatty(STDIN_FILENO))
+		interactive();
+	else
+		non_interactive();
 
-	while (1)
-	{
-		printPrompt();
-		readInput(&line, &bufsiz);
-		args = parseInput(line);
-
-		if (args[0] != NULL && _strcmp(args[0], "exit") == 0)
-		{
-			free(line);
-			free(args);
-			exit(EXIT_FAILURE);
-		}
-		executeCommand(args);
-		free(args);
-	}
-	free(line);
 	return (0);
 }

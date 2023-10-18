@@ -16,6 +16,8 @@
 
 extern char **environ;
 
+void non_interactive(void);
+void interactive(void);
 char **parseInput(char *str);
 void executeCommand(char **args);
 void printPrompt(void);
