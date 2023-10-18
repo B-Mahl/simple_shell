@@ -25,7 +25,7 @@ void non_interactive(void)
 		exit(EXIT_SUCCESS);
 	}
 
-	executeComannd(args);
+	executeCommand(args);
 	free(args);
 	free(line);
 }
