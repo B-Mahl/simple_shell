@@ -18,7 +18,7 @@ void executeCommand(char **args)
 	{
 		if (args[0] == NULL)
 			exit(EXIT_SUCCESS);
-		if (execvp(args[0], args) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			if (_strcmp(args[0], "env") == 0)
 				printEnv();
